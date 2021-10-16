@@ -23,11 +23,9 @@ export default {
   },
   created() {
     firebase.auth().onAuthStateChanged((user) => {
-      console.log("user", user);
       this.$store.commit("updateUser", user);
       if (user) {
         this.$store.dispatch("getCurrentUser", user);
-        console.log(this.$store.state.profileEmail);
       }
     });
     this.checkRoute();
@@ -97,13 +95,13 @@ button,
 .router-button {
   transition: 500ms ease all;
   cursor: pointer;
-  margin-top: 24px;
-  padding: 12px 24px;
-  background-color: #303030;
-  color: #fff;
+  margin-top: 24px !important;
+  padding: 12px 24px !important;
+  background-color: #303030 !important;
+  color: #fff !important;
   border-radius: 20px;
   border: none;
-  text-transform: uppercase;
+  text-transform: uppercase !important;
   &:focus {
     outline: none;
   }
