@@ -1,6 +1,6 @@
 <template>
   <div class="app-wrapper">
-    <div class="app">
+    <div class="app" v-if="this.$store.state.postLoaded">
       <Navigation v-if="!navigation" />
       <router-view />
       <Footer v-if="!navigation" />
@@ -29,7 +29,7 @@ export default {
       }
     });
     this.checkRoute();
-    // this.$store.dispatch("getPost");
+    this.$store.dispatch("getPost");
   },
   mounted() {},
   methods: {
@@ -95,13 +95,13 @@ button,
 .router-button {
   transition: 500ms ease all;
   cursor: pointer;
-  margin-top: 24px !important;
-  padding: 12px 24px !important;
-  background-color: #303030 !important;
-  color: #fff !important;
+  margin-top: 24px;
+  padding: 12px 24px;
+  background-color: #303030;
+  color: #fff;
   border-radius: 20px;
   border: none;
-  text-transform: uppercase !important;
+  text-transform: uppercase;
   &:focus {
     outline: none;
   }

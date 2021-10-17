@@ -22,7 +22,7 @@
           >
           <router-link
             class="font-medium px-2 transition hover:text-blue-400"
-            to="#"
+            :to="{ name: 'CreatePost' }"
             >Create Post</router-link
           >
           <router-link
@@ -86,7 +86,9 @@
         <router-link class="py-1 text-white" :to="{ name: 'Blogs' }"
           >Blogs</router-link
         >
-        <router-link class="py-1 text-white" to="#">Create Post</router-link>
+        <router-link class="py-1 text-white" :to="{ name: 'CreatePost' }"
+          >Create Post</router-link
+        >
         <router-link
           v-if="!user"
           class="py-1 text-white"
